@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>役職じゃんけん</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h1>役職じゃんけん</h1>
+    </div>
+
+    <div class="container_ex">
+        <p class="title">じゃんけんの勝敗によって、あなたの役職が変わります。</p>
+    </div>
+
+
+    <div id="modal-overlay">
+        <div class="modal-mask"></div>
+          <div class="modal-container">
+            <div class="modal-inner">
+              <div class="popup-title">ルール</div>
+              <div class="popup-text">
+                <p>◾️ あなたが相手に勝った場合、役職が1つ上がります。</p>
+                <p>◾️ あなたが相手に負けた場合、役職が1つ下がります。</p>
+                <p>◾️ おあいこだった場合、役職は変わりません。</p>
+                <p>◾️ 相手の役職も、勝敗によって同様に変わります。</p>
+              </div>
+              <button class="popupclose">&times;</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="game">
+        <div class="field">
+            <p id="userField">あなた</p>
+            <div class="user-field">
+               <img id="userImg" src="img_user/superwoman.png" alt="User Choice">
+            </div>
+            <div class="user-title">
+               <img id="userImg2" src="img_yakushoku/hanzawa.png" alt="User Title">
+            </div>
+        </div>
+
+        <div class="field">
+            <p id="pcField">相手　</p>
+            <div class="pc-field">
+               <img id="pcImg" src="img_pc/businessman.png" alt="Computer Choice">
+            </div>
+            <div class="pc-title">
+               <img id="pcImg2" src="img_yakushoku/hanzawa.png" alt="Computer Title">
+            </div>
+        </div>
+
+        <h2>あなたの手を選んでください</h2>
+        <button onclick="janken(0)">
+            <img src="img_user/rock.png" alt="グー" style="width: 200px; height: 200px;">
+        </button>
+        <button onclick="janken(1)">
+            <img src="img_user/scissers.png" alt="チョキ" style="width: 200px; height: 200px;">
+        </button>
+        <button onclick="janken(2)">
+            <img src="img_user/paper.png" alt="パー" style="width: 200px; height: 200px;">
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <div id="yakushoku">
+        <div id="result_yakushoku"></div>
+        <div id="score">score : 0</div>
+    </div>
+
+    <div id="container_result">
+        <div class="result-mask"></div>
+        <div class="result-container">
+            <div class="result-inner">
+                <button class="close" onclick="closeResultImageModal()">×</button>
+                <img id="result_winner" src="img_result/winner.png" alt="Result Image">
+            </div>
+        </div>
+    </div>
+
+    <div id="pc_container_result">
+        <div class="result-mask"></div>
+        <div class="result-container">
+            <div class="result-inner">
+                <button class="close" onclick="closePcResultModal()">×</button>
+                <img id="pc_result_winner" src="img_result/loser.png" alt="PC Result Image">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>     
+
+</body>
+</html>
